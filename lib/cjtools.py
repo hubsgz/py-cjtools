@@ -15,10 +15,17 @@ def gethtml(url):
         获取网页内容
     '''
     header = {
+        #"Remote Address":"211.151.242.183:80",
+        #"Request URL":url,
+        #"Request Method":"GET",
         "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Encoding":"deflate, sdch",
         "Accept-Language":"zh-CN,zh;q=0.8,en;q=0.6",
+        "Cache-Control":"max-age=0",
         "Connection":"keep-alive",       
-        "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+        "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
+        "Cookie":"JSESSIONID=AF718C9F2A939E9AC1A82718BA37B2AA; __utma=142379556.5991213.1422946064.1425971735.1425973772.6; __utmc=142379556; __utmz=142379556.1422946064.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=65168252.1009372752.1422944371.1425971272.1425974600.6; __utmb=65168252.2.10.1425974600; __utmc=65168252; __utmz=65168252.1425690194.4.2.utmcsr=gaokao.chsi.com.cn|utmccn=(referral)|utmcmd=referral|utmcct=/sch/search--ss-on,searchType-1,option-qg,start-2540.dhtml",
+        "Host":"gaokao.chsi.com.cn"
     }
     req = urllib2.Request(url, headers=header)
     webpage = urllib2.urlopen(req)
